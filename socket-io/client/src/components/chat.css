@@ -1,0 +1,13 @@
+.message:nth-child(odd) {
+  background-color: #e0e0e0;
+  align-self: flex-start;
+}
+
+.message:nth-child(even) {
+  background-color: hwb(0 64% 36%);
+  align-self: flex-end;
+}
+
+.test {
+  background-color: red;
+}
