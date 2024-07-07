@@ -24,9 +24,10 @@ export const Chat: FC<ChatProps> = ({ chatName, onSendMessage, messages }) => {
   return (
     <Stack
       w="100%"
-      h="100%"
+      h="90%"
+      mt={20}
     >
-      <Text title="1">{chatName}</Text>
+      <Text title="1" size="xl">{chatName}</Text>
       <Group
         h="100%"
         w="100%"
@@ -38,7 +39,7 @@ export const Chat: FC<ChatProps> = ({ chatName, onSendMessage, messages }) => {
           styles={{
             root: {
               width: '50%',
-              height: '90%',
+              height: '100%',
               overflowY: 'scroll',
               background: 'white',
               borderRadius: 10,

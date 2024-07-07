@@ -3,6 +3,7 @@ import { Message } from "../types";
 
 const messages: Message[] = [];
 
+// For short polling
 const getMessages = (req: Request, res: Response) => {
   res.send(messages);
 }

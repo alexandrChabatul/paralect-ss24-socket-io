@@ -9,20 +9,14 @@ export const ShortPolling = () => {
   const [delay, setDelay] = useState(2);
 
   const onSendMessage = (message: Message) => {
-    axios.post('http://localhost:3000/messages', message);
+    axios.post('http://localhost:3000/short-polling/messages', message);
     setMessages((prev) => [...prev, message]);
   };
 
-  // async function fetchMessages() {
-  //   const res = await axios.get('http://localhost:3000/messages');
-  //   setMessages(res.data);
-  // }
-
-  // Below function works like compomentWillUnmount and hence it clears the timeout
   useEffect(() => {
     let id = setTimeout(async function fetchMessages() {
       try {
-        const res = await axios.get('http://localhost:3000/messages');
+        const res = await axios.get('http://localhost:3000/short-polling/messages');
         setMessages(res.data);
       } finally {
         id = setTimeout(fetchMessages, delay * 1000);
