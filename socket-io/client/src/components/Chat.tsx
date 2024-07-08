@@ -41,17 +41,6 @@ export const Chat: FC<ChatProps> = ({ chatName, onSendMessage, messages }) => {
       >
         <Stack
           justify="start"
-          styles={{
-            root: {
-              width: '50%',
-              height: '100%',
-              overflowY: 'scroll',
-              oveflowX: 'hidden',
-              background: 'white',
-              borderRadius: 10,
-              padding: 10,
-            },
-          }}
           className="chat"
         >
           {messages.map((message) => (
