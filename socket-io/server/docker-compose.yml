@@ -1,0 +1,36 @@
+version : '3.6'
+
+services:
+    redis:
+      container_name: redis
+      image: redis:5.0.5
+      command: redis-server --appendonly yes
+      hostname: redis
+      ports:
+        - 6379:6379
+    lb:
+        image: haproxy
+        ports:
+            - "8080:8080"
+        volumes:
+            - ./haproxy:/usr/local/etc/haproxy
+    nodeapp1: &nodeapp
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        depends_on: 
+            - redis
+        environment:
+            - APPID=3000
+    nodeapp2:
+        <<: *nodeapp
+        environment:
+            - APPID=3001
+    nodeapp3:
+        <<: *nodeapp
+        environment:
+            - APPID=3002
+    nodeapp4:
+        <<: *nodeapp
+        environment:
+            - APPID=3003

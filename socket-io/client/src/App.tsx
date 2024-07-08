@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ShortPolling } from './pages/ShortPolling';
 import { LongPolling } from './pages/LongPolling';
 import { ServerSendEvents } from './pages/ServerSendEvents';
+import { SocketIO } from './pages/SocketIO';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: '/sse',
     element: <ServerSendEvents />,
+  },
+  {
+    path: '/socket-io',
+    element: <SocketIO />,
   },
 ]);
 

@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
-import { Message } from '../types';
-import emitter from '../services/event-emitter-service';
+import emitter from '../services/event-emitter.service';
 
 // For short polling
 const getMessages = (req: Request, res: Response) => {

@@ -11,21 +11,21 @@ export const ServerSendEvents = () => {
   };
 
   useEffect(() => {
-    subscribe()
-}, [])
+    subscribe();
+  }, []);
 
-const subscribe = async () => {
+  const subscribe = async () => {
     const eventSource = new EventSource(`http://localhost:3000/sse/messages`);
     eventSource.onmessage = function (event) {
-        const message = JSON.parse(event.data);
-        setMessages(prev => [...prev, message]);
-    }
-}
+      const message = JSON.parse(event.data);
+      setMessages((prev) => [...prev, message]);
+    };
+  };
 
   return (
     <>
       <Chat
-        chatName="Long polling chat example"
+        chatName="Server send events chat example"
         onSendMessage={onSendMessage}
         messages={messages}
       />
