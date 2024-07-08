@@ -8,6 +8,22 @@
   align-self: flex-end;
 }
 
-.test {
-  background-color: red;
+.chat::-webkit-scrollbar {
+  width: 5px;
+}
+
+
+.chat::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.chat::-webkit-scrollbar-thumb {
+  background: gray; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.chat::-webkit-scrollbar-thumb:hover {
+  background: gray; 
 }

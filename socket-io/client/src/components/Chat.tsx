@@ -27,7 +27,12 @@ export const Chat: FC<ChatProps> = ({ chatName, onSendMessage, messages }) => {
       h="90%"
       mt={20}
     >
-      <Text title="1" size="xl">{chatName}</Text>
+      <Text
+        title="1"
+        size="xl"
+      >
+        {chatName}
+      </Text>
       <Group
         h="100%"
         w="100%"
@@ -41,11 +46,13 @@ export const Chat: FC<ChatProps> = ({ chatName, onSendMessage, messages }) => {
               width: '50%',
               height: '100%',
               overflowY: 'scroll',
+              oveflowX: 'hidden',
               background: 'white',
               borderRadius: 10,
               padding: 10,
             },
           }}
+          className="chat"
         >
           {messages.map((message) => (
             <Stack
