@@ -14,14 +14,16 @@ export const ShortPolling = () => {
   };
 
   useEffect(() => {
-    let id = setTimeout(async function fetchMessages() {
+    let id: number;
+    const fetchMessages = async () => {
       try {
         const res = await axios.get('http://localhost:3000/short-polling/messages');
         setMessages(res.data);
       } finally {
         id = setTimeout(fetchMessages, delay * 1000);
       }
-    }, delay * 1000);
+    };
+    id = setTimeout(fetchMessages, delay * 1000);
     return () => clearTimeout(id);
   });
 
