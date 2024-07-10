@@ -14,19 +14,19 @@ services:
         depends_on: 
             - redis
         environment:
-            - APPID=3000
+            - APPID=3001
     nodeapp2:
         <<: *nodeapp
         environment:
-            - APPID=3001
+            - APPID=3002
     nodeapp3:
         <<: *nodeapp
         environment:
-            - APPID=3002
+            - APPID=3003
     nodeapp4:
         <<: *nodeapp
         environment:
-            - APPID=3003
+            - APPID=3004
     redis:
       container_name: redis
       image: redis:5.0.5
