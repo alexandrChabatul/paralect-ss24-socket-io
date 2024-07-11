@@ -25,7 +25,7 @@ export const ShortPolling = () => {
     };
     id = setTimeout(fetchMessages, delay * 1000);
     return () => clearTimeout(id);
-  });
+  }, [delay]);
 
   return (
     <>
