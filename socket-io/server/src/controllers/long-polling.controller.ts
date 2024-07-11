@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import emitter from '../services/event-emitter.service';
 
-// For short polling
+// For long polling
 const getMessages = (req: Request, res: Response) => {
   emitter.once('newMessage', (message) => {
     res.json(message);
